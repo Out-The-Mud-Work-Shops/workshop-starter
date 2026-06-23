@@ -1,0 +1,21 @@
+pathways:
+  default: workshop
+  paths:
+    workshop:
+      title: "Hello, Co-Creator"
+      steps:
+      - 00-overview
+      - 01-environment-check
+      - 99-summary
+
+modules:
+- name: 00-overview
+  title: Overview
+- name: 01-environment-check
+  title: Environment Check
+- name: 99-summary
+  title: Summary
+
+session:
+  timeout: 30m
+  orphaned: 15m
