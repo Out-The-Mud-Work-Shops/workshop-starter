@@ -38,13 +38,46 @@ Open this repo in **Claude Code** or **Codex** and the bundled skills activate:
   clickable actions, setup scripts, etc.
 - **`educates-course-design`** — how to plan a multi-workshop course.
 
-## Quick start
+## Runbook: author and ship a workshop
 
-1. Copy `workshops/hello-cocreator/` to `workshops/<your-name>/`.
-2. Edit `resources/workshop.yaml` and the pages under `workshop/`.
-3. Keep `session:` within the allowed subset — see **`CONTRIBUTING.md`**.
-4. Commit and push.
-5. Send an OTM operator your repo URL and the commit SHA to bless.
+Follow these steps end to end. No image build, no cluster access.
+
+1. **Get the repo.** Fork this repo (or, if you're an org member, clone it):
+   ```bash
+   git clone https://github.com/Out-The-Mud-Work-Shops/workshop-starter
+   cd workshop-starter
+   ```
+2. **Create your workshop** by copying a sample:
+   ```bash
+   cp -R workshops/hello-cocreator workshops/<your-workshop-name>
+   ```
+3. **Edit the definition** — `workshops/<your-workshop-name>/resources/workshop.yaml`:
+   set `metadata.name` (unique), `spec.title`, `spec.description`. Keep the
+   `session:` block within the **allowed subset** (see `CONTRIBUTING.md`):
+   `budget: small|medium`, `role: view`, only terminal/editor/slides apps,
+   memory ≤ 1Gi, storage ≤ 2Gi. Do **not** add a `publish:` or
+   `workshop.files:` block — the platform injects the file source for you.
+4. **Write your content** — pages in `workshops/<your-workshop-name>/workshop/content/*.md`,
+   listed in `workshop/config.yaml`. Optional per-session setup goes in
+   `workshop/setup.d/*.sh` (keep it in-session and non-privileged).
+   Tip: open this repo in **Claude Code** or **Codex** — the bundled
+   `educates-workshop-authoring` skill guides every field.
+5. **Commit and push:**
+   ```bash
+   git add -A && git commit -m "Add <your-workshop-name> workshop" && git push
+   ```
+6. **Get the commit SHA** to hand off:
+   ```bash
+   git rev-parse HEAD
+   ```
+7. **Request deployment.** Send an OTM operator your **repo URL** and that
+   **commit SHA**. They review the commit, bless that exact SHA, validate it
+   against the policy clamp, and deploy it to the `otm` portal.
+8. **Iterate.** Pushed a fix? Send the operator the **new SHA** — blessing
+   pins an immutable commit, so a fresh push won't go live until it's blessed.
+
+> Operators: the review/bless/deploy side of this runbook lives in the OTM
+> platform repo at `dell-precision/co-creators/README.md`.
 
 ## What you do NOT need
 
