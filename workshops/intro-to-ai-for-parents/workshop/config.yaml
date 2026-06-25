@@ -1,0 +1,30 @@
+pathways:
+  default: workshop
+  paths:
+    workshop:
+      title: "Intro to AI for Parents"
+      steps:
+      - 00-overview
+      - 01-what-is-ai
+      - 02-your-first-chat
+      - 03-writing-good-prompts
+      - 04-staying-safe
+      - 99-summary
+
+modules:
+- name: 00-overview
+  title: Welcome
+- name: 01-what-is-ai
+  title: What Is AI, Really?
+- name: 02-your-first-chat
+  title: Your First Chat
+- name: 03-writing-good-prompts
+  title: Writing Good Prompts
+- name: 04-staying-safe
+  title: Staying Safe With AI
+- name: 99-summary
+  title: Wrap-Up
+
+session:
+  timeout: 90m
+  orphaned: 30m

@@ -1,0 +1,122 @@
+apiVersion: training.educates.dev/v1beta1
+kind: Workshop
+metadata:
+  name: intro-to-ai-for-parents
+spec:
+  title: "Intro to AI for Parents"
+  description: "A friendly, no-jargon introduction to AI for parents: what it is, how to use a ChatGPT-style assistant yourself, and how to stay safe with it."
+  vendor: otm.io
+  difficulty: beginner
+  duration: 45m
+
+  # No `publish:` / `workshop.files:` — the OTM auto-deploy pipeline injects the
+  # git file source (scoped to this folder) and pulls content from this repo.
+  workshop:
+    image: ghcr.io/educates/educates-base-environment:3.7.1   # required, allowlisted
+
+  session:
+    namespaces:
+      budget: small
+      role: view
+      security:
+        token:
+          enabled: false
+    # Parents see NO terminal/editor — just the chat tab + the guide pane.
+    applications:
+      terminal:
+        enabled: false
+      editor:
+        enabled: false
+      console:
+        enabled: false
+
+    resources:
+      memory: "512Mi"
+      storage: "1Gi"
+
+    # Expose the per-session Open WebUI proxy as a session ingress.
+    ingresses:
+      - name: chat
+        protocol: http
+        host: owui-proxy.$(session_namespace).svc.cluster.local
+        port: 8080
+
+    # The "AI Chat" tab the parent uses (ChatGPT-style UI, private to this session).
+    dashboards:
+      - name: "AI Chat"
+        url: "$(ingress_protocol)://$(session_name)-chat.$(ingress_domain)$(ingress_port_suffix)"
+
+    # Per-session reverse proxy: injects this session's identity into the shared
+    # Open WebUI so each parent is a distinct user with private chats. Carries the
+    # label the workshops-shared NetworkPolicy requires.
+    objects:
+      - apiVersion: v1
+        kind: ConfigMap
+        metadata:
+          name: owui-proxy-nginx
+          namespace: $(session_namespace)
+        data:
+          nginx.conf: |
+            worker_processes 1;
+            events { worker_connections 256; }
+            http {
+              server {
+                listen 8080;
+                location / {
+                  proxy_set_header X-User-Email "$(session_name)@parents.otm";
+                  proxy_set_header X-User-Name  "Parent";
+                  proxy_set_header X-User-Role  "user";
+                  proxy_pass http://open-webui-shared-svc.workshops-shared.svc.cluster.local:8080;
+                  proxy_http_version 1.1;
+                  proxy_set_header Upgrade $http_upgrade;
+                  proxy_set_header Connection "upgrade";
+                  proxy_set_header Host $host;
+                  proxy_read_timeout 600s;
+                  proxy_buffering off;
+                }
+              }
+            }
+      - apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: owui-proxy
+          namespace: $(session_namespace)
+        spec:
+          replicas: 1
+          selector:
+            matchLabels:
+              app: owui-proxy
+          template:
+            metadata:
+              labels:
+                app: owui-proxy
+                otm.io/role: owui-session-proxy
+            spec:
+              containers:
+                - name: nginx
+                  image: nginx:alpine
+                  ports:
+                    - containerPort: 8080
+                  volumeMounts:
+                    - name: conf
+                      mountPath: /etc/nginx/nginx.conf
+                      subPath: nginx.conf
+                      readOnly: true
+                  resources:
+                    requests: { cpu: 25m, memory: 32Mi }
+              volumes:
+                - name: conf
+                  configMap:
+                    name: owui-proxy-nginx
+      - apiVersion: v1
+        kind: Service
+        metadata:
+          name: owui-proxy
+          namespace: $(session_namespace)
+        spec:
+          selector:
+            app: owui-proxy
+          ports:
+            - name: http
+              port: 8080
+              targetPort: 8080
