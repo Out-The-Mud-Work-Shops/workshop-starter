@@ -24,7 +24,7 @@ is exactly why we have to stay a little skeptical.
 
 ## Why it sometimes "makes things up"
 
-Because it's predicting plausible-sounding text, an AI will sometimes state
+Because it's predicting plausible-sounding text, an AI chatbot will sometimes state
 something **confidently wrong**. This is called a *hallucination*. It isn't
 lying - it has no idea it's wrong. It's just produced words that *fit the
 pattern* of a good answer.
