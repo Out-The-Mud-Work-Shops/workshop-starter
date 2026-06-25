@@ -26,5 +26,5 @@ modules:
   title: Wrap-Up
 
 session:
-  timeout: 90m
+  timeout: 60m
   orphaned: 30m

@@ -10,12 +10,12 @@ Here's what every parent should know — and one thing to see with your own eyes
 Remember "hallucinations" from earlier? Let's catch one. Open the chat:
 
 ```dashboard:open-dashboard
-name: AI Chat
+name: AI Chatbot
 ```
 
 Ask it something with a definite right answer that's easy to check, for example:
 
-```text
+```workshop:copy
 List 3 books by an author named Marlena Quibbleton, with the year each was published.
 ```
 
@@ -60,8 +60,8 @@ You don't need to be an expert — you just need to be curious *with* them:
 
 You can even ask the AI to help you parent around AI:
 
-```text
+```workshop:copy
 Help me write 3 simple family rules for using AI chatbots safely, suitable for kids aged 8 to 14. Keep them short and positive.
 ```
 
-Click **Next** to wrap up.
+Click **Continue** to wrap up.
