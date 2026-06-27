@@ -1,6 +1,6 @@
 # intro-to-ai-for-parents
 
-A friendly, no-jargon introduction to AI for parents. Each session gets a
+A friendly introduction to Artificial Intelligence also known as AI for parents. Each session gets a
 private ChatGPT-style assistant (the **AI Chat** tab) to use hands-on while the
 guide covers what AI is, how to write good prompts, and how to stay safe with it.
 

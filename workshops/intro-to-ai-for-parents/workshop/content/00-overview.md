@@ -2,30 +2,26 @@
 title: Welcome
 ---
 
-Welcome! If your kids talk about "AI" or "ChatGPT" and you've nodded along
-without being totally sure what they mean - this workshop is for you. No tech
-background needed. By the end you'll have **used an AI assistant yourself** and
-know how to use it safely with your family.
+If your kids talk about "AI" or "ChatGPT" and you've nodded along without being totally sure what they mean then this workshop is for you. By the end you will have **used an AI chatbot yourself** and learn some safety tips to use when interacting with AI for you and your family.
 
 ## What you'll do here
 
 In about 30 minutes you will:
 
 1. Understand, in plain English, what an AI chatbot actually is.
-2. Have your **first real conversation** with an AI assistant.
+2. Have your **first real conversation** with an AI chatbot.
 3. Practice asking for things in a way that gets useful answers.
 4. Learn how to spot mistakes and keep your family safe.
 
-## Your private AI assistant
+## Your private AI Chatbot assistant
 
 This workshop comes with its own **"AI Chatbot"** - a ChatGPT-style assistant
-that runs privately for you, right here in this training environment. Nothing
-you type is shared with other participants.
+that runs just for you, right here in this training environment. Nothing you type is shared with other participants or big data.
 
 {{< note >}}
-That privacy is special to this local workshop assistant. The everyday tools
-your family might use (like ChatGPT or Gemini) work differently - we'll cover
-that on the safety page.
+That privacy is special to this local workshop chatbot. The everyday tools
+your family might use (like ChatGPT, Gemini or Grok) work differently - we'll cover
+that when we talk about safety.
 {{< /note >}}
 
 Take a look now - click the button below to open it:
