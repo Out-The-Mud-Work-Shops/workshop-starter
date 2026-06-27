@@ -19,8 +19,14 @@ In about 30 minutes you will:
 ## Your private AI assistant
 
 This workshop comes with its own **"AI Chatbot"** - a ChatGPT-style assistant
-that runs privately for you. Nothing you type is shared with other
-participants, and it stays inside this training environment.
+that runs privately for you, right here in this training environment. Nothing
+you type is shared with other participants.
+
+{{< note >}}
+That privacy is special to this local workshop assistant. The everyday tools
+your family might use (like ChatGPT or Gemini) work differently - we'll cover
+that on the safety page.
+{{< /note >}}
 
 Take a look now - click the button below to open it:
 

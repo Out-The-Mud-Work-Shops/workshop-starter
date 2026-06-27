@@ -41,6 +41,13 @@ Explain what a "group chat" is and why my teenager cares about it, like you're e
 Help me write a short, kind note to my child's teacher asking for a meeting next week.
 ```
 
+And here's one to try **with your kid** - AI is a great partner for sparking
+creativity together:
+
+```workshop:copy
+My 6-year-old loves dinosaurs and the ocean. Help us make up a short bedtime story that combines both, and pause so my child can decide what happens next.
+```
+
 {{< note >}}
 Notice you can keep the conversation going. Reply with "make it shorter" or
 "my child is vegetarian" and it will adjust. It **remembers** what you said
@@ -51,5 +58,13 @@ useful.
 ## This conversation is yours
 
 The chats you create here are private to your session - no one else in the
-workshop can see them. Have a few exchanges until the chat box feels
-comfortable, then click **Continue** to learn how to get *better* answers.
+workshop can see them, because this assistant runs locally just for you.
+
+{{< note >}}
+That privacy is special to this workshop. Most AI tools you'll use at home -
+ChatGPT, Gemini, Copilot - send what you type to a company's servers and may
+use it to improve their AI. We'll come back to this on the safety page.
+{{< /note >}}
+
+Have a few exchanges until the chat box feels comfortable, then click
+**Continue** to learn how to get *better* answers.

@@ -56,7 +56,7 @@ Turn this to-do brain-dump into a tidy weekend plan: groceries, soccer practice 
 ```
 
 {{< note >}}
-If an answer isn't quite right, you don't start over you just **tell it what
+If an answer isn't quite right, you don't start over - you just **tell it what
 to change**. Treating it like a conversation, not a search box, is the single
 biggest upgrade to your results.
 {{< /note >}}

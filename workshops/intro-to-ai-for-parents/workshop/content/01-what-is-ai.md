@@ -3,7 +3,7 @@ title: What Is AI, Really?
 ---
 
 Let's clear up a common misconception. The kind of "AI" your kids use - ChatGPT, Gemini,
-and the assistant in this workshop - are called  **chatbots** or **large
+and the assistant in this workshop - are called **chatbots** or **large
 language models**. Here's the plain-English version.
 
 ## A really well-read autocomplete
@@ -18,7 +18,7 @@ That's the key thing to hold onto:
 
 {{< note >}}
 An AI chatbot is **predicting likely words**, not looking up facts in a database
-the way a search engine does. Just like a phone suggesting your next words, it can get it wrong. It's astonishingly good at sounding right — which
+the way a search engine does. Just like a phone suggesting your next words, it can get it wrong. It's astonishingly good at sounding right - which
 is exactly why we have to stay a little skeptical.
 {{< /note >}}
 

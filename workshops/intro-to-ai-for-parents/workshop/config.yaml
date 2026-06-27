@@ -8,7 +8,9 @@ pathways:
       - 01-what-is-ai
       - 02-your-first-chat
       - 03-writing-good-prompts
-      - 04-staying-safe
+      - 04-when-ai-gets-it-wrong
+      - 05-keeping-your-family-safe
+      - 06-guiding-your-kids
       - 99-summary
 
 modules:
@@ -20,8 +22,12 @@ modules:
   title: Your First Chat
 - name: 03-writing-good-prompts
   title: Writing Good Prompts
-- name: 04-staying-safe
-  title: Staying Safe With AI
+- name: 04-when-ai-gets-it-wrong
+  title: When AI Gets It Wrong
+- name: 05-keeping-your-family-safe
+  title: Keeping Your Family Safe
+- name: 06-guiding-your-kids
+  title: Guiding Your Kids
 - name: 99-summary
   title: Wrap-Up
 
